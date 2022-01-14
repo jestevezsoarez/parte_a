@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.btn {
+    color: #fff;
+    border-radius: 0.8rem;
+    margin-right: 1rem;
+}
+
+.button-on {    
+    background-color: #971395;    
+}
+
+.button-off {
+    background-color: #18256f;
+}
