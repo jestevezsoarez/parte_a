@@ -5,9 +5,11 @@
     <h5>Numbers of users in module</h5>
   </div>
   <div class="col-md-8">
-    <ul class="list-group" *ngFor="let item of users">
-      <li class="list-group-item list-group-item-success">{{ item }}</li>
-    </ul>
+    <div class="btn-group-vertical">
+      <button type="button" class="btn button-on m-1" *ngFor="let item of users">
+        {{ item | formato: 'user' }}
+      </button>
+    </div>
   </div>
 
   <div class="row">

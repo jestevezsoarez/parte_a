@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 // Services
 import { UsersService } from './services/users.service';
 import { ModuleNavbarComponent } from './components/shared/module-navbar/module-navbar.component';
+import { FormatoPipe } from './pipes/formato.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ModuleNavbarComponent
+    ModuleNavbarComponent,
+    FormatoPipe
   ],
   imports: [
     BrowserModule,
