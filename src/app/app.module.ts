@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Services
 import { UsersService } from './services/users.service';
+import { ModuleNavbarComponent } from './components/shared/module-navbar/module-navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ModuleNavbarComponent
   ],
   imports: [
     BrowserModule,

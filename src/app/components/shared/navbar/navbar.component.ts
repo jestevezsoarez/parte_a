@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  constructor() { }
+  moduleNames: string[] = [];
 
-  ngOnInit(): void {
+  @Output() moduleSelected;
+
+
+  constructor( private _usersService: UsersService ) {
+      this.moduleSelected = new EventEmitter();
+      this.moduleNames = this._usersService.getModuleNames();      
+      
+  }
+
+  showModules(name: string) {    
+    
+    this.moduleSelected.emit(name);
   }
 
 }
