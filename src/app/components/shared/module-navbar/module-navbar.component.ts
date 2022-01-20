@@ -21,7 +21,10 @@ export class ModuleNavbarComponent{
 
   constructor( private _usersService: UsersService ) {
     this.authModules = this._usersService.getAuthModules();
-    this.contentModules = this._usersService.getContentModules();    
+
+    this.contentModules = this._usersService.getContentModules();
+    //console.log(this.contentModules);
+        
     this.userSelected = new EventEmitter();
    }
 

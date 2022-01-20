@@ -5,10 +5,11 @@
     margin-right: 1rem;
 }
 
-.button-on {    
-    background-color: #971395;    
+.button-on {
+    background-color: #18256f;    
 }
 
 .button-off {
-    background-color: #18256f;
+    background-color: #971395;    
 }
+

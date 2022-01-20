@@ -1,7 +1,18 @@
-<nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-        <button type="button" class="btn button-on" *ngFor="let item of moduleNames" (click)="showModules(item)">
-            {{ item | titlecase }}
-        </button>
-    </form>    
-</nav>
+
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                    <button type="button" class="btn button-off m-1" *ngFor="let item of moduleNames" (click)="showModules(item)">
+                        {{ item | titlecase }}
+                    </button>
+                </form>    
+            </nav>
+
+        </div>
+    </div>
+
+
+
+
+    

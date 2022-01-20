@@ -12,6 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class HomeComponent implements OnInit {
 
   users: string[] = [];
+  moduleNumber: number;
 
   constructor( private _usersService: UsersService ) { }
 
@@ -24,8 +25,16 @@ export class HomeComponent implements OnInit {
     while(selection.length > 2) {
       selection.shift();
     }
+
+    let regex = /(\d+)/g;
+
+    let str = selection[1].match(regex);
+    let numero = parseInt(str[0]);
+    this.moduleNumber = numero;
+    
     
     this.users = this._usersService.getUsers(selection[0], selection[1]);    
+    //console.log(this.users);
     
   }
 

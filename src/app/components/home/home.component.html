@@ -1,23 +1,25 @@
 <app-module-navbar (userSelected)="showUsers($event)"></app-module-navbar>
 
-<div class="row">
-  <div class="col-md-4">    
-    <h5>Numbers of users in module</h5>
-  </div>
-  <div class="col-md-8">
-    <div class="btn-group-vertical">
-      <button type="button" class="btn button-on m-1" *ngFor="let item of users">
-        {{ item | formato: 'user' }}
-      </button>
+<div class="container">
+  <div class="row m-3">
+    <div class="col-4">    
+      <h6>Numbers of users in module {{ moduleNumber }}: </h6>
+    </div>
+    <div class="col-md-8">
+      <div class="btn-group-vertical">
+        <button type="button" class="btn button-off m-1" *ngFor="let item of users">
+          {{ item | formato: 'user' }}
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <button type="button" class="btn btn-danger">Delete</button>
-      <button type="button" class="btn btn-warning">Advice</button>
-      <button type="button" class="btn btn-success">Create</button>
-      <button type="button" class="btn btn-info">Submit</button>
+    <div class="row">
+      <div class="col-12">        
+        <button type="button" id="delete" class="btn btn-light">Delete<img src="./assets/img/trash-can.png" width="22px"></button>        
+        <button type="button" id="advice" class="btn btn-light">Advice<img src="./assets/img/lightbulb.png" width="22px"></button>
+        <button type="button" id="create" class="btn btn-light"><img src="./assets/img/create.png" width="22px"> Create</button>
+        <button type="button" id="submit" class="btn btn-light">Submit<img src="./assets/img/submit.png" width="22px"></button>
+      </div>
     </div>
-  </div>
 </div>
