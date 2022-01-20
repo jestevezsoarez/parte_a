@@ -13,8 +13,7 @@ export class ModuleNavbarComponent{
 
   showAutModules    : boolean = false;
   showContentModules: boolean = false;
-
-  users: string[] = [];
+  
   userSelection: string[] = [];
 
   buttonName: string = '';
@@ -22,10 +21,9 @@ export class ModuleNavbarComponent{
   @Output() userSelected;
 
   constructor( private _usersService: UsersService ) {
-    this.authModules = this._usersService.getAuthModules();
 
-    this.contentModules = this._usersService.getContentModules();
-    //console.log(this.contentModules);
+    this.authModules = this._usersService.getAuthModules();
+    this.contentModules = this._usersService.getContentModules();    
         
     this.userSelected = new EventEmitter();
    }
@@ -37,8 +35,7 @@ export class ModuleNavbarComponent{
     
      if (name === 'content_module') {
        this.showContentModules = true;
-       this.showAutModules     = false;       
-       
+       this.showAutModules     = false; 
      }
 
      if (name === 'auth_module') {
@@ -50,11 +47,8 @@ export class ModuleNavbarComponent{
 
    showUsers(provider: string) {
 
-    this.buttonName = provider;
-    console.log(provider);
-    
-    this.userSelection.push(provider);    
-    
+    this.buttonName = provider; 
+    this.userSelection.push(provider);
     this.userSelected.emit(this.userSelection);
     this.userSelection.pop();
 

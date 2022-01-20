@@ -1,4 +1,4 @@
-button {    
+.users {    
     border-radius: 0.8rem !important;    
     padding:  0.5rem 2rem 0.5rem 2rem;
 }
@@ -8,7 +8,7 @@ button {
 }
 
 #advice {
-    background-color: #e4c975 !important;
+    background-color: #e4c975;
 }
 
 #create {
@@ -17,4 +17,9 @@ button {
 
 #submit {
     background-color: #77ccb8;
+}
+
+.panel {
+    margin-top: 150px;
+    text-align: center;
 }

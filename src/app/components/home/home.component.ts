@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   users: string[] = [];
   moduleNumber: number;
+  show: boolean = false;
 
   constructor( private _usersService: UsersService ) { }
 
@@ -33,8 +34,8 @@ export class HomeComponent implements OnInit {
     this.moduleNumber = numero;
     
     
-    this.users = this._usersService.getUsers(selection[0], selection[1]);    
-    //console.log(this.users);
+    this.users = this._usersService.getUsers(selection[0], selection[1]);
+    this.show = true;
     
   }
 

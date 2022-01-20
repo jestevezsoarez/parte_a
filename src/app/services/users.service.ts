@@ -3,9 +3,8 @@ import { HttpClient } from "@angular/common/http";
 
 
 @Injectable()
-export class UsersService {
+export class UsersService {    
     
-    myShallowCopy;
     data: any = {};
     result: any = {
         auth_module: 
@@ -18,14 +17,11 @@ export class UsersService {
         }
     };
 
-    authModules   : string[] = [];
-    //authModules = new Array();
+    authModules   : string[] = [];    
     contentModules: string[] = [];
-
-    strAuthModules:string[];
+        
     
-    constructor( private http: HttpClient ) {
-        console.log("Servicio listo para usar");
+    constructor( private http: HttpClient ) {        
 
         // Do 20 GET request as numbers of json files
         for( let i = 0; i < 20; i++ ) {
@@ -35,20 +31,15 @@ export class UsersService {
                 this.data = resp;
                                 
                 let auth = this.data.provider.auth_module;
-                //console.log(auth);
-                                
                 auth = auth.replace('.', '_');
 
                 if(!this.result.auth_module.hasOwnProperty(auth)) {                    
-                    this.result.auth_module[auth] = new Array();                   
-                    
-                    this.authModules.push(auth);
-                    
+                    this.result.auth_module[auth] = new Array();
+                    this.authModules.push(auth);                    
                 }
 
                 let content = this.data.provider.content_module;
-                content = content.replace('.', '_');                
-                                
+                content = content.replace('.', '_');
 
                 if(!this.result.content_module.hasOwnProperty(content)) {                    
                     this.result.content_module[content] = new Array();
@@ -59,19 +50,11 @@ export class UsersService {
                 
                 this.result.auth_module[auth].push(`./u${userNumber}.json`);
 
-                this.result.content_module[content].push(`./u${userNumber}.json`);
-
-                
-            })
-
-            
-        }
-
-        
+                this.result.content_module[content].push(`./u${userNumber}.json`);                
+            })            
+        }       
  
-     } // End constructor
-
-     
+     } // End constructor    
 
 
 
@@ -86,12 +69,12 @@ export class UsersService {
     }
 
     getContentModules(): string[] {
+
         return this.contentModules;
     }
 
-    getUsers(module: string, provider: string): string[] {        
-        //console.log(this.result[module][provider]);
-        
+    getUsers(module: string, provider: string): string[] {
+
         return this.result[module][provider];
     }
 }
