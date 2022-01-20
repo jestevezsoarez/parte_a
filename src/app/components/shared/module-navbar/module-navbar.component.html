@@ -5,7 +5,8 @@
         <div class="col-md-12">
             <nav class="navbar navbar-light bg-light" *ngIf="showAutModules">
                 <form class="form-inline">
-                    <button type="button" class="btn button-off m-1" *ngFor="let item of authModules" (click)="showUsers(item)">
+                    <button type="button" class="btn button-off m-1" *ngFor="let item of authModules" 
+                    (click)="showUsers(item)" [ngClass]="{'button-on': item==buttonName, 'button-off': item!=buttonName}">
                         {{ item | formato: 'provider' }}
                     </button>
                 </form>
@@ -13,7 +14,8 @@
         
             <nav class="navbar navbar-light bg-light" *ngIf="showContentModules">
                 <form class="form-inline">
-                    <button type="button" class="btn button-off m-1" *ngFor="let item of contentModules" (click)="showUsers(item)">
+                    <button type="button" class="btn button-off m-1" *ngFor="let item of contentModules" 
+                    (click)="showUsers(item)" [ngClass]="{'button-on': item==buttonName, 'button-off': item!=buttonName}">
                         {{ item | formato: 'provider' }}
                     </button>
                 </form>

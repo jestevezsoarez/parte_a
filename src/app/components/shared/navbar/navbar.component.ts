@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Button } from 'protractor';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class NavbarComponent {
 
-  moduleNames: string[] = [];
+  moduleNames: string[] = [];  
+  buttonName: string = '';
 
   @Output() moduleSelected;
 
@@ -19,8 +21,9 @@ export class NavbarComponent {
       
   }
 
-  showModules(name: string) {    
-    
+  showModules(name: string) {
+     
+     this.buttonName = name;
     this.moduleSelected.emit(name);
   }
 

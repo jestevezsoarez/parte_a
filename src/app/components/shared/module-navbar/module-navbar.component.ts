@@ -17,6 +17,8 @@ export class ModuleNavbarComponent{
   users: string[] = [];
   userSelection: string[] = [];
 
+  buttonName: string = '';
+
   @Output() userSelected;
 
   constructor( private _usersService: UsersService ) {
@@ -31,7 +33,7 @@ export class ModuleNavbarComponent{
 
    showModules(name: string) {
      
-     this.userSelection.push(name);     
+     this.userSelection.push(name);
     
      if (name === 'content_module') {
        this.showContentModules = true;
@@ -47,6 +49,9 @@ export class ModuleNavbarComponent{
 
 
    showUsers(provider: string) {
+
+    this.buttonName = provider;
+    console.log(provider);
     
     this.userSelection.push(provider);    
     
