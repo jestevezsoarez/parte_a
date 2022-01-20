@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Button } from 'protractor';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
